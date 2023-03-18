@@ -2,6 +2,7 @@ import numpy as np
 import os
 import re
 import datetime
+import time
 import openai, tenacity
 import argparse
 import configparser
@@ -112,38 +113,32 @@ class Reviewer:
             f.write(text)                    
 
 def main(args):            
-    if args.paper_path:
-        reviewer1 = Reviewer(args=args)
-        # 开始判断是路径还是文件：   
-        paper_list = []     
-        if args.paper_path.endswith(".pdf"):
-            paper_list.append(Paper(path=args.paper_path))            
-        else:
-            for root, dirs, files in os.walk(args.paper_path):
-                print("root:", root, "dirs:", dirs, 'files:', files) #当前目录路径
-                for filename in files:
-                    # 如果找到PDF文件，则将其复制到目标文件夹中
-                    if filename.endswith(".pdf"):
-                        paper_list.append(Paper(path=os.path.join(root, filename)))        
-        print("------------------paper_num: {}------------------".format(len(paper_list)))        
-        [print(paper_index, paper_name.path.split('\\')[-1]) for paper_index, paper_name in enumerate(paper_list)]
-        reviewer1.review_by_chatgpt(paper_list=paper_list)
+
+    reviewer1 = Reviewer(args=args)
+    # 开始判断是路径还是文件：   
+    paper_list = []     
+    if args.paper_path.endswith(".pdf"):
+        paper_list.append(Paper(path=args.paper_path))            
     else:
-        reviewer1 = Reviewer(args=args)
-        filter_results = reviewer1.filter_arxiv(max_results=args.max_results)
-        paper_list = reviewer1.download_pdf(filter_results)
-        reviewer1.review_by_chatgpt(paper_list=paper_list)
+        for root, dirs, files in os.walk(args.paper_path):
+            print("root:", root, "dirs:", dirs, 'files:', files) #当前目录路径
+            for filename in files:
+                # 如果找到PDF文件，则将其复制到目标文件夹中
+                if filename.endswith(".pdf"):
+                    paper_list.append(Paper(path=os.path.join(root, filename)))        
+    print("------------------paper_num: {}------------------".format(len(paper_list)))        
+    [print(paper_index, paper_name.path.split('\\')[-1]) for paper_index, paper_name in enumerate(paper_list)]
+    reviewer1.review_by_chatgpt(paper_list=paper_list)
+
     
     
 if __name__ == '__main__':    
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper_path", type=str, default='', help="path of papers")
-    parser.add_argument("--max_results", type=int, default=1, help="the maximum number of results")
     parser.add_argument("--file_format", type=str, default='txt', help="output file format")
     parser.add_argument("--language", type=str, default='en', help="output lauguage, en or zh")
     
     args = parser.parse_args()
-    import time
     start_time = time.time()
     main(args=args)    
     print("review time:", time.time() - start_time)

@@ -13,7 +13,7 @@
 
 各种会议和期刊的审稿需求很大，一个个字，一篇篇的敲审稿意见，十分费时间和精力。
 
-基于之前ChatPaper的启发，因此本人在周末开发了这款ChatReviewer，并且开源给大家。
+基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。
 
 **ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。**
 

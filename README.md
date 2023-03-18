@@ -25,14 +25,12 @@ ChatPaper是一款基于ChatGPT3.5的API接口的论文自动审稿AI助手。
 
 ## 使用步骤：
 Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。
-
 1. 在apikey.ini中填入你的openai key（sk开头的那串）。
-
+![image](https://user-images.githubusercontent.com/56249874/226108721-b74ce0b1-dde3-4e11-8aa6-785d7483e3ec.png)
 2. 使用过程要使用VPN而且保证全局代理（因为ChatGPT把中国ban了）。
-
 3. 在ReviewFormat.txt中输入你想要的审稿格式(不然就是默认格式)。
-
-4. 安装依赖：最好翻墙。
+![image](https://user-images.githubusercontent.com/56249874/226108813-dc44924f-5528-4644-aed2-475d23ccdd84.png)
+4. 安装依赖：使用VPN。
 ``` bash
 pip install -r requirements.txt
 ```
@@ -40,22 +38,16 @@ pip install -r requirements.txt
 ```bash
 pip install -r requirements.txt -i  http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 ```
-
 5. 对本地的论文进行审稿： 运行chat_reviewer.py， 比如：
 ```python
 python chat_reviewer.py --pdf_path "input_file/demo1.pdf"
 ```
-
 对本地的论文进行批量审稿： 运行chat_reviewer.py， 比如：
 ```python
 python chat_reviewer.py --pdf_path "input_file_path"
 ```
-
 ## 例子：
 ![98652a676f49578be84e4bb51299d90](https://user-images.githubusercontent.com/56249874/226108616-e9e5fe36-350e-4991-9ece-2259a9af3ac3.png)
-
-
-
 ## 致谢：
 - 感谢OpenAI提供的强大ChatGPT-API；
 - 感谢[kaixindelele](https://github.com/kaixindelele)同学的[ChatPaper](https://github.com/kaixindelele/ChatPaper)和开源精神 ，ChatReviewer的代码是基于ChatPaper修改而来。

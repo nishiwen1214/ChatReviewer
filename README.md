@@ -26,7 +26,7 @@ ChatPaper是一款基于ChatGPT3.5的API接口的论文自动审稿AI助手。
 ## 使用步骤：
 Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。
 1. 在apikey.ini中填入你的openai key（sk开头的那串）。
-![image](https://user-images.githubusercontent.com/56249874/226108721-b74ce0b1-dde3-4e11-8aa6-785d7483e3ec.png)
+![image](https://user-images.githubusercontent.com/56249874/226109398-42671901-280f-481f-b56d-dc169823428b.png)
 2. 使用过程要使用VPN而且保证全局代理（因为ChatGPT把中国ban了）。
 3. 在ReviewFormat.txt中输入你想要的审稿格式(不然就是默认格式)。
 ![image](https://user-images.githubusercontent.com/56249874/226108813-dc44924f-5528-4644-aed2-475d23ccdd84.png)

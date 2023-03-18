@@ -15,13 +15,16 @@
 
 基于之前ChatPaper的启发，因此本人在周末开发了这款ChatReviewer，并且开源给大家。
 
-ChatPaper是一款基于ChatGPT3.5的API接口的论文自动审稿AI助手。
+**ChatPaper是一款基于ChatGPT3.5的API接口的论文自动审稿AI助手。**
 
 如果对您有帮助，一个Star和Fork就是对本人的肯定和鼓励了。
 
 欢迎大家转发，以及任何问题和改进意见！
 
 **注意：ChatReviewer开发的目的是帮助人们提高审稿的效率，而不是完全代替人独立审稿。**
+
+## 主要更新：
+**我更新了ChatResponse，这个是根据审稿人的审稿意见生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**
 
 ## 使用步骤：
 Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。
@@ -48,6 +51,14 @@ python chat_reviewer.py --pdf_path "input_file_path"
 ```
 ## 例子：
 ![98652a676f49578be84e4bb51299d90](https://user-images.githubusercontent.com/56249874/226108616-e9e5fe36-350e-4991-9ece-2259a9af3ac3.png)
+
+## 使用ChatResponse
+对本地的论文进行审稿： 运行chat_response.py， 比如：
+```python
+python chat_response.py --pdf_path "review_comments.txt"
+```
+![image](https://user-images.githubusercontent.com/56249874/226114965-9a2b91e5-3766-42e8-b17f-05d9abb2191b.png)
+
 ## 致谢：
 - 感谢OpenAI提供的强大ChatGPT-API；
 - 感谢[kaixindelele](https://github.com/kaixindelele)同学的[ChatPaper](https://github.com/kaixindelele/ChatPaper)和开源精神 ，ChatReviewer的代码是基于ChatPaper修改而来。

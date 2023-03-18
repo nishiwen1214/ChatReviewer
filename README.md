@@ -52,12 +52,12 @@ python chat_reviewer.py --pdf_path "input_file_path"
 ```
 
 ## 例子：
-image.png
+![98652a676f49578be84e4bb51299d90](https://user-images.githubusercontent.com/56249874/226108616-e9e5fe36-350e-4991-9ece-2259a9af3ac3.png)
 
 
 
 ## 致谢：
-- 感谢OpenAI提供 的强大API；
+- 感谢OpenAI提供的强大ChatGPT-API；
 - 感谢[kaixindelele](https://github.com/kaixindelele)同学的[ChatPaper](https://github.com/kaixindelele/ChatPaper)和开源精神 ，ChatReviewer的代码是基于ChatPaper修改而来。
 
 

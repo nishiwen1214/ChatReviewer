@@ -1,0 +1,27 @@
+## Paper:1
+
+
+
+
+
+
+Overall Review:
+This paper proposes a novel Coarse-to-fine Cascaded Evidence-Distillation (CofCED) neural network for explainable fake news detection based on raw reports from different media outlets. The proposed model consists of a hierarchical encoder for web text representation, and two cascaded selectors to select the most explainable sentences for verdicts. The proposed method outperforms state-of-the-art detection baselines and generates high-quality explanations from diverse evaluation perspectives. The paper also presents two explainable fake news datasets, which are publicly available.
+
+Paper Strength:
+1. The proposed CofCED model is innovative and practical, and solves the critical issue of fact-checking delays in detecting fake news.
+2. The paper presents two explainable fake news datasets, which provide contributions to the research community.
+3. The experiments demonstrate that the proposed method outperforms the state-of-the-art detection baselines and generates high-quality explanations.
+
+Paper Weakness:
+1. The paper lacks explicit description of the implementation details for reproducing the study.
+2. The evaluation and ablation studies for the proposed method are limited, lacking deeper analysis of the performance.
+3. There is a lack of comparisons or discussions with widely-known baselines in the field.
+
+Questions to Authors and Suggestions for Rebuttal:
+1. Could the authors provide more detailed information on the implementation process of the proposed method?
+2. Could the authors conduct more extensive evaluation and ablation studies to support the proposed method's performance?
+3. Could the authors compare the proposed method with more widely-known baselines in the field?
+
+Overall score:
+4. The paper proposes a innovative and practical method for explainable fake news detection, and presents two valuable datasets to the research community. However, some weak points in the paper, such as limited evaluation and ablation studies and unclear comparisons with widely-known baselines, still need to be improved.

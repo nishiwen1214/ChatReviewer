@@ -31,7 +31,7 @@ Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为
 1. 在apikey.ini中填入你的openai key（sk开头的那串）。
 ![image](https://user-images.githubusercontent.com/56249874/226109398-42671901-280f-481f-b56d-dc169823428b.png)
 2. 使用过程要使用VPN而且保证全局代理（因为ChatGPT把中国ban了）。
-3. 在ReviewFormat.txt中输入你想要的审稿格式(不然就是默认格式)。
+3. 在ReviewFormat.txt中输入你想要的审稿格式（不然就是默认格式）。
 ![image](https://user-images.githubusercontent.com/56249874/226108813-dc44924f-5528-4644-aed2-475d23ccdd84.png)
 4. 安装依赖：使用VPN。
 ``` bash

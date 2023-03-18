@@ -24,7 +24,7 @@
 **注意：ChatReviewer开发的目的是帮助人们提高审稿的效率，而不是完全代替人独立审稿。**
 
 ## 主要更新：
-- **更新了ChatResponse，这个是根据审稿人的审稿意见生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**
+- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**
 
 ## 使用步骤：
 Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。

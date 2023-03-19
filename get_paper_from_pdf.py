@@ -1,14 +1,18 @@
 import fitz, io, os
 from PIL import Image
+from collections import Counter
+import json
+import re
+
 
 
 class Paper:
-    def __init__(self, path, title='', url='', abs='', authers=[]):
+    def __init__(self, path, title='', url='', abs='', authors=[]):
         # 初始化函数，根据pdf路径初始化Paper对象                
         self.url =  url           # 文章链接
         self.path = path          # pdf路径
         self.section_names = []   # 段落标题
-        self.section_texts = {}   # 段落内容    
+        self.section_texts = {}   # 段落内容
         self.abs = abs
         self.title_page = 0
         if title == '':
@@ -17,7 +21,7 @@ class Paper:
             self.parse_pdf()            
         else:
             self.title = title
-        self.authers = authers        
+        self.authors = authors
         self.roman_num = ["I", "II", 'III', "IV", "V", "VI", "VII", "VIII", "IIX", "IX", "X"]
         self.digit_num = [str(d+1) for d in range(10)]
         self.first_image = ''
@@ -26,20 +30,18 @@ class Paper:
         self.pdf = fitz.open(self.path) # pdf文档
         self.text_list = [page.get_text() for page in self.pdf]
         self.all_text = ' '.join(self.text_list)
-        self.section_page_dict = self._get_all_page_index() # 段落与页码的对应字典
-        # print("section_page_dict", self.section_page_dict)
-        self.section_text_dict = self._get_all_page() # 段落与内容的对应字典
-        self.section_text_dict.update({"title": self.title})
-        self.section_text_dict.update({"paper_info": self.get_paper_info()})
+        self.extract_section_infomation()
+        self.section_texts.update({"title": self.title})
+        self.section_texts.update({"paper_info": self.get_paper_info()})
         self.pdf.close()         
         
     def get_paper_info(self):
         first_page_text = self.pdf[self.title_page].get_text()
-        if "Abstract" in self.section_text_dict.keys():
-            abstract_text = self.section_text_dict['Abstract']
+        if "Abstract" in self.section_texts.keys():
+            abstract_text = self.section_texts['Abstract']
         else:
             abstract_text = self.abs
-        introduction_text = self.section_text_dict['Introduction']
+        introduction_text = self.section_texts['Introduction']
         first_page_text = first_page_text.replace(abstract_text, "").replace(introduction_text, "")
         return first_page_text
     
@@ -98,110 +100,75 @@ class Paper:
                             # print("The string is bold.", max_string, "font_size:", font_size, "font_flags:", font_flags)                            
                             if len(cur_string) > 4 and "arXiv" not in cur_string:                            
                                 # print("The string is bold.", max_string, "font_size:", font_size, "font_flags:", font_flags) 
-                                if cur_title == ''    :
+                                if cur_title == '':
                                     cur_title += cur_string                       
                                 else:
                                     cur_title += ' ' + cur_string     
-                            self.title_page = page_index
-                            # break
+                                self.title_page = page_index
+                                # break
         title = cur_title.replace('\n', ' ')                        
         return title
 
+    def extract_section_infomation(self):
+        doc = fitz.open(self.path)
 
-    def _get_all_page_index(self):
-        # 定义需要寻找的章节名称列表
-        section_list = ["Abstract", 
-                        'Introduction', 'Related Work', 'Background', 
-                        "Preliminary", "Problem Formulation",
-                        'Methods', 'Methodology', "Method", 'Approach', 'Approaches',
-                        # exp
-                        "Materials and Methods", "Experiment Settings",
-                        'Experiment',  "Experimental Results", "Evaluation", "Experiments",                        
-                        "Results", 'Findings', 'Data Analysis',                                                                        
-                        "Discussion", "Results and Discussion", "Conclusion",
-                        'References']
-        # 初始化一个字典来存储找到的章节和它们在文档中出现的页码
-        section_page_dict = {}
-        # 遍历每一页文档
-        for page_index, page in enumerate(self.pdf):
-            # 获取当前页面的文本内容
-            cur_text = page.get_text()
-            # 遍历需要寻找的章节名称列表
-            for section_name in section_list:
-                # 将章节名称转换成大写形式
-                section_name_upper = section_name.upper()
-                # 如果当前页面包含"Abstract"这个关键词
-                if "Abstract" == section_name and section_name in cur_text:
-                    # 将"Abstract"和它所在的页码加入字典中
-                    section_page_dict[section_name] = page_index
-                # 如果当前页面包含章节名称，则将章节名称和它所在的页码加入字典中
-                else:
-                    if section_name + '\n' in cur_text:
-                        section_page_dict[section_name] = page_index
-                    elif section_name_upper + '\n' in cur_text:
-                        section_page_dict[section_name] = page_index
-        # 返回所有找到的章节名称及它们在文档中出现的页码
-        return section_page_dict
+        # 获取文档中所有字体大小
+        font_sizes = []
+        for page in doc:
+            blocks = page.get_text("dict")["blocks"]
+            for block in blocks:
+                if 'lines' not in block:
+                    continue
+                lines = block["lines"]
+                for line in lines:
+                    for span in line["spans"]:
+                        font_sizes.append(span["size"])
+        most_common_size, _ = Counter(font_sizes).most_common(1)[0]
 
-    def _get_all_page(self):
-        """
-        获取PDF文件中每个页面的文本信息，并将文本信息按照章节组织成字典返回。
+        # 按照最频繁的字体大小确定标题字体大小的阈值
+        threshold = most_common_size * 1
 
-        Returns:
-            section_dict (dict): 每个章节的文本信息字典，key为章节名，value为章节文本。
-        """
-        text = ''
-        text_list = []
         section_dict = {}
-        
-        # 再处理其他章节：
-        text_list = [page.get_text() for page in self.pdf]
-        for sec_index, sec_name in enumerate(self.section_page_dict):
-            # print(sec_index, sec_name, self.section_page_dict[sec_name])
-            if sec_index <= 0 and self.abs:
-                continue
-            else:
-                # 直接考虑后面的内容：
-                start_page = self.section_page_dict[sec_name]
-                if sec_index < len(list(self.section_page_dict.keys()))-1:
-                    end_page = self.section_page_dict[list(self.section_page_dict.keys())[sec_index+1]]
-                else:
-                    end_page = len(text_list)
-                # print("start_page, end_page:", start_page, end_page)
-                cur_sec_text = ''
-                if end_page - start_page == 0:
-                    if sec_index < len(list(self.section_page_dict.keys()))-1:
-                        next_sec = list(self.section_page_dict.keys())[sec_index+1]
-                        if text_list[start_page].find(sec_name) == -1:
-                            start_i = text_list[start_page].find(sec_name.upper())
-                        else:
-                            start_i = text_list[start_page].find(sec_name)
-                        if text_list[start_page].find(next_sec) == -1:
-                            end_i = text_list[start_page].find(next_sec.upper())
-                        else:
-                            end_i = text_list[start_page].find(next_sec)                        
-                        cur_sec_text += text_list[start_page][start_i:end_i]
-                else:
-                    for page_i in range(start_page, end_page):                    
-                        if page_i == start_page:
-                            if text_list[start_page].find(sec_name) == -1:
-                                start_i = text_list[start_page].find(sec_name.upper())
-                            else:
-                                start_i = text_list[start_page].find(sec_name)
-                            cur_sec_text += text_list[page_i][start_i:]
-                        elif page_i < end_page:
-                            cur_sec_text += text_list[page_i]
-                        elif page_i == end_page:
-                            if sec_index < len(list(self.section_page_dict.keys()))-1:
-                                next_sec = list(self.section_page_dict.keys())[sec_index+1]
-                                if text_list[start_page].find(next_sec) == -1:
-                                    end_i = text_list[start_page].find(next_sec.upper())
-                                else:
-                                    end_i = text_list[start_page].find(next_sec)  
-                                cur_sec_text += text_list[page_i][:end_i]
-                section_dict[sec_name] = cur_sec_text.replace('-\n', '').replace('\n', ' ')
-        return section_dict
-                
+        last_heading = None
+        subheadings = []
+        heading_font = -1
+        # 遍历每一页并查找子标题
+        found_abstract = False
+        for page in doc:
+            blocks = page.get_text("dict")["blocks"]
+            for block in blocks:
+                if not found_abstract:
+                    text = json.dumps(block)
+                    if re.search(r"\bAbstract\b", text, re.IGNORECASE):
+                        found_abstract = True
+                if found_abstract:
+                    if 'lines' not in block:
+                        continue
+                    lines = block["lines"]
+                    for line in lines:
+                        for span in line["spans"]:
+                            if span["size"] > threshold and re.match(r"[A-Z][a-z]+(?:\s[A-Z][a-z]+)*",
+                                                                     span["text"].strip()):
+                                if heading_font == -1:
+                                    heading_font = span["size"]
+                                elif heading_font != span["size"]:
+                                    continue
+                                heading = span["text"].strip()
+                                if "References" in heading:  # reference 以后的内容不考虑
+                                    self.section_names = subheadings
+                                    self.section_texts = section_dict
+                                    return
+                                subheadings.append(heading)
+                                if last_heading is not None:
+                                    section_dict[last_heading] = section_dict[last_heading].strip()
+                                section_dict[heading] = ""
+                                last_heading = heading
+                            # 否则将当前文本添加到上一个子标题的文本中
+                            elif last_heading is not None:
+                                section_dict[last_heading] += " " + span["text"].strip()
+        self.section_names = subheadings
+        self.section_texts = section_dict
+
 def main():
     path = r'demo.pdf'
     paper = Paper(path=path)

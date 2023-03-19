@@ -6,12 +6,6 @@
 </div>
 </br>
 
-The number of papers in the field of artificial intelligence has exploded in recent years, and this has required a large number of reviewers to review the papers.
-
-As young faculty, researchers and PhD students are already busy with their usual work and studies.
-
-The demand for reviewers for various conferences and journals is huge, and it is very time and energy consuming to knock out review comments word by word, article by article.
-
 Based on the inspiration of ChatPaper, I developed this ChatReviewer over the weekend and open source it for everyone.
 
 **ChatReviewer is an automatic paper review AI assistant based on ChatGPT-3.5's API interface. **

@@ -85,7 +85,7 @@ class Reviewer:
         with open('ReviewFormat.txt', 'r') as file:   # 读取特定的审稿格式
             review_format = file.read()
         messages=[
-                {"role": "system", "content": "You are a professional reviewer in the field of +"args.research_fields"+. Now I will give you a paper. You need to give a complete review opinion according to the following requirements and format:"+ review_format +" Please answer in {}.".format(self.language)},
+                {"role": "system", "content": "You are a professional reviewer in the field of "+args.research_fields+". Now I will give you a paper. You need to give a complete review opinion according to the following requirements and format:"+ review_format +" Please answer in {}.".format(self.language)},
                 {"role": "user", "content": input_text},
             ]
                 

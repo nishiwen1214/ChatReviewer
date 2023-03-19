@@ -21,7 +21,7 @@
 
 欢迎大家转发，以及任何问题和改进意见！
 
-**注意：ChatReviewer开发的目的是帮助人们提高审稿的效率，而不是完全代替人独立审稿。**
+**![0309E7BC](https://user-images.githubusercontent.com/56249874/226153359-01287f31-a388-4d01-9d04-329ea9fd1da8.png)![030A0CF8](https://user-images.githubusercontent.com/56249874/226153369-03a07135-5077-45de-bdaa-9dce88c45174.png) 注意：ChatReviewer开发的目的是帮助人们提高审稿效率和审稿质量，而不是完全代替人独立审稿，请对审稿的论文负责，不要直接复制粘贴生成的审稿意见。**
 
 ## 主要更新：
 - **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**

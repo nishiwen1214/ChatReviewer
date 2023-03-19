@@ -45,13 +45,14 @@ class Reviewer:
             # 提取重要的论文内容
             text = ''
             text += 'Title:' + paper.title
-            text += 'Abstrat:' + paper.abs
             text += list(paper.section_text_dict.values())[0]
             text += 'Introduction:' + paper.section_text_dict['Introduction']
             text += list(paper.section_text_dict.values())[4]
             text += list(paper.section_text_dict.values())[5]
-            text += 'Conclusion:' + paper.section_text_dict['Conclusion']
-            
+            try:
+                text += 'Conclusion:' + paper.section_text_dict['Conclusion']
+            except:
+                pass
             chat_review_text = self.chat_review(text=text)            
             htmls.append('## Paper:' + str(paper_index+1))
             htmls.append('\n\n\n')            
@@ -84,7 +85,7 @@ class Reviewer:
         with open('ReviewFormat.txt', 'r') as file:   # 读取特定的审稿格式
             review_format = file.read()
         messages=[
-                {"role": "system", "content": "You are a professional reviewer in the field of computer science and artificial intelligence. Now I will give you a paper. Please answer in {}. You need to give a complete review opinion according to the following requirements and format:".format(self.language)+ review_format},
+                {"role": "system", "content": "You are a professional reviewer in the field of computer science and artificial intelligence. Now I will give you a paper. You need to give a complete review opinion according to the following requirements and format:"+ review_format +" Please answer in {}.".format(self.language)},
                 {"role": "user", "content": input_text},
             ]
                 

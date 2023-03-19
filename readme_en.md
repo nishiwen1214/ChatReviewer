@@ -35,18 +35,18 @@ pip install -r requirements.txt
 ```
 4. To review a paper locally: run chat_reviewer.py, e.g.
 ```python
-python chat_reviewer.py --pdf_path "input_file/demo1.pdf"
+python chat_reviewer.py --paper_path "input_file/demo1.pdf"
 ```
 To do a batch review of a local paper: run chat_reviewer.py, e.g.
 ```python
-python chat_reviewer.py --pdf_path "input_file_path"
+python chat_reviewer.py --paper_path "input_file_path"
 ```
 ## Example：
 ![98652a676f49578be84e4bb51299d90](https://user-images.githubusercontent.com/56249874/226108616-e9e5fe36-350e-4991-9ece-2259a9af3ac3.png)
 ## Use ChatResponse
 To reply to a local review comment review_comments.txt: run chat_response.py, e.g.
 ```python
-python chat_response.py --pdf_path "review_comments.txt"
+python chat_response.py --paper_path "review_comments.txt"
 ```
 Example：
 ![image](https://user-images.githubusercontent.com/56249874/226114965-9a2b91e5-3766-42e8-b17f-05d9abb2191b.png)

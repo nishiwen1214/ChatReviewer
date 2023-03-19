@@ -85,7 +85,7 @@ class Reviewer:
         with open('ReviewFormat.txt', 'r') as file:   # 读取特定的审稿格式
             review_format = file.read()
         messages=[
-                {"role": "system", "content": "You are a professional reviewer in the field of computer science and artificial intelligence. Now I will give you a paper. You need to give a complete review opinion according to the following requirements and format:"+ review_format +" Please answer in {}.".format(self.language)},
+                {"role": "system", "content": "You are a professional reviewer in the field of +"args.research_fields"+. Now I will give you a paper. You need to give a complete review opinion according to the following requirements and format:"+ review_format +" Please answer in {}.".format(self.language)},
                 {"role": "user", "content": input_text},
             ]
                 
@@ -137,6 +137,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper_path", type=str, default='', help="path of papers")
     parser.add_argument("--file_format", type=str, default='txt', help="output file format")
+    parser.add_argument("--research_fields", type=str, default='computer science and artificial intelligence', help="the research fields of paper")
     parser.add_argument("--language", type=str, default='en', help="output lauguage, en or zh")
     
     args = parser.parse_args()

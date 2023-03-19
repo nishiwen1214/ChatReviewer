@@ -20,7 +20,7 @@ If it is helpful to you, a Star and Fork is a confirmation and encouragement to 
 
 Feel free to repost it, as well as any questions and improvement ideas!
 
-⭐️⭐️⭐️**Note: ChatReviewer was developed to help people improve the efficiency and quality of their reviews, not to completely replace people reviewing independently, please be responsible for the papers you review and do not copy and paste any generated review comments directly!!! **
+⭐️⭐️⭐️**Warning: ChatReviewer was developed to help people improve review efficiency and review quality, not to completely replace people with independent review, please be responsible for the reviewed papers and do not directly copy and paste any generated review comments!!! **
 
 ## Major updates.
 - ** Updated ChatResponse, an AI assistant that automatically generates author responses based on reviewers' comments. (ChatResponse and ChatReviewer are a bit left and right...) **

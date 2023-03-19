@@ -6,6 +6,12 @@
 </div>
 </br>
 
+Update: 
+* 重写了 section split 的逻辑, fix 了原本可能出现的抓不到 introduction 和 conclusion 的问题 (比如当 conclusion 的标题是 "conclusions and future works" 的时候).
+* 更改为两个阶段: 先询问 chatgpt 它感兴趣的章节, 随后再发送相应的章节.
+
+---
+
 基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。
 
 **ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。**

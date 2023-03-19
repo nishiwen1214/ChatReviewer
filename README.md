@@ -43,11 +43,11 @@ pip install -r requirements.txt -i  http://pypi.douban.com/simple  --trusted-hos
 ```
 5. 对本地的论文进行审稿： 运行chat_reviewer.py， 比如：
 ```python
-python chat_reviewer.py --pdf_path "input_file/demo1.pdf"
+python chat_reviewer.py --paper_path "input_file/demo1.pdf"
 ```
 对本地的论文进行批量审稿： 运行chat_reviewer.py， 比如：
 ```python
-python chat_reviewer.py --pdf_path "input_file_path"
+python chat_reviewer.py --paper_path "input_file_path"
 ```
 ## 例子：
 ![98652a676f49578be84e4bb51299d90](https://user-images.githubusercontent.com/56249874/226108616-e9e5fe36-350e-4991-9ece-2259a9af3ac3.png)
@@ -55,7 +55,7 @@ python chat_reviewer.py --pdf_path "input_file_path"
 ## 使用ChatResponse
 对本地的审稿评论review_comments.txt进行回复： 运行chat_response.py， 比如：
 ```python
-python chat_response.py --pdf_path "review_comments.txt"
+python chat_response.py --paper_path "review_comments.txt"
 ```
 例子：
 ![image](https://user-images.githubusercontent.com/56249874/226114965-9a2b91e5-3766-42e8-b17f-05d9abb2191b.png)

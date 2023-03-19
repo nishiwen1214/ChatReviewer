@@ -1,4 +1,4 @@
-# ChatReviewer
+# ChatReviewer&ChatRespone
 
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |

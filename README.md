@@ -6,12 +6,11 @@
 </div>
 </br>
 
-
-基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。
-
 **ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。**
 
-**ChatResponse是根据审稿人的评论自动生成作者回复的AI助手。**
+**ChatResponse是一款根据审稿人的评论自动生成作者回复的AI助手。**
+
+基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。
 
 如果对您有帮助，一个Star和Fork就是对本人的肯定和鼓励了。
 

@@ -18,6 +18,7 @@
 
 ## 主要更新：
 - **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**
+- Todo: 做一个网页版本的ChatReviewer和ChatResponse
 
 ## 使用步骤：
 Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。

@@ -40,7 +40,7 @@ python chat_reviewer.py --paper_path "input_file_path"
 ## Use ChatResponse
 To reply to a local review comment review_comments.txt: run chat_response.py, e.g.
 ```python
-python chat_response.py --paper_path "review_comments.txt"
+python chat_response.py --comment_path "review_comments.txt"
 ```
 Example：
 ![image](https://user-images.githubusercontent.com/56249874/226114965-9a2b91e5-3766-42e8-b17f-05d9abb2191b.png)

@@ -6,11 +6,6 @@
 </div>
 </br>
 
-Update: 
-* 重写了 section split 的逻辑, fix 了原本可能出现的抓不到 introduction 和 conclusion 的问题 (比如当 conclusion 的标题是 "conclusions and future works" 的时候).
-* 更改为两个阶段: 先询问 chatgpt 它感兴趣的章节, 随后再发送相应的章节.
-
----
 
 基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。
 
@@ -23,8 +18,10 @@ Update:
 **⭐️⭐️⭐️ 声明：ChatReviewer开发的目的是帮助人们提高审稿效率和审稿质量，而不是完全代替人独立审稿，请对审稿的论文负责，不要直接复制粘贴任何生成的审稿意见！！！**
 
 ## 主要更新：
+- **Todo: 做一个网页版本的ChatReviewer和ChatResponse**
+- 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。
 - **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**
-- Todo: 做一个网页版本的ChatReviewer和ChatResponse
+
 
 ## 使用步骤：
 Windows, Mac和Linux系统应该都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。

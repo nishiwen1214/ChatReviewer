@@ -20,7 +20,7 @@
 ## 主要更新：
 - **Todo: 做一个网页版本的ChatReviewer和ChatResponse**
 - 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。
-- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。（ChatResponse和ChatReviewer有点左右互博的意思...）**
+- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...）
 
 
 ## 使用步骤：

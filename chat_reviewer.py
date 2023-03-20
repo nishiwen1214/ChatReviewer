@@ -42,17 +42,21 @@ class Reviewer:
     def review_by_chatgpt(self, paper_list):
         htmls = []
         for paper_index, paper in enumerate(paper_list):
-            # 提取重要的论文内容
+            sections_of_interest = self.stage_1(paper)
+            # extract the essential parts of the paper
             text = ''
-            text += 'Title:' + paper.title
-            text += list(paper.section_text_dict.values())[0]
-            text += 'Introduction:' + paper.section_text_dict['Introduction']
-            text += list(paper.section_text_dict.values())[4]
-            text += list(paper.section_text_dict.values())[5]
-            try:
-                text += 'Conclusion:' + paper.section_text_dict['Conclusion']
-            except:
-                pass
+            text += 'Title:' + paper.title + '. '
+            text += 'Abstract: ' + paper.section_texts['Abstract']
+            intro_title = next((item for item in paper.section_names if 'ntroduction' in item), None)
+            if intro_title is not None:
+                text += 'Introduction: ' + paper.section_texts[intro_title]
+            # Similar for conclusion section
+            conclusion_title = next((item for item in paper.section_names if 'onclusion' in item), None)
+            if conclusion_title is not None:
+                text += 'Conclusion: ' + paper.section_texts[conclusion_title]
+            for heading in sections_of_interest:
+                if heading in paper.section_names:
+                    text += heading + ': ' + paper.section_texts[heading]
             chat_review_text = self.chat_review(text=text)            
             htmls.append('## Paper:' + str(paper_index+1))
             htmls.append('\n\n\n')            
@@ -68,9 +72,41 @@ class Reviewer:
             mode = 'w' if paper_index == 0 else 'a'
             file_name = os.path.join(export_path, date_str+'-'+self.validateTitle(paper.title)+"."+self.file_format)
             self.export_to_markdown("\n".join(htmls), file_name=file_name, mode=mode)
-            htmls = [] 
-    
-    
+            htmls = []
+
+
+    def stage_1(self, paper):
+        htmls = []
+        text = ''
+        text += 'Title: ' + paper.title + '. '
+        text += 'Abstract: ' + paper.section_texts['Abstract']
+        openai.api_key = self.chat_api_list[self.cur_api]
+        self.cur_api += 1
+        self.cur_api = 0 if self.cur_api >= len(self.chat_api_list)-1 else self.cur_api
+        messages = [
+            {"role": "system",
+             "content": f"You are a professional reviewer in the field of {args.research_fields}. "
+                        f"I will give you a paper. You need to review this paper and discuss the novelty and originality of ideas, correctness, clarity, the significance of results, potential impact and quality of the presentation. "
+                        f"Due to the length limitations, I am only allowed to provide you the abstract, introduction, conclusion and at most two sections of this paper."
+                        f"Now I will give you the title and abstract and the headings of potential sections. "
+                        f"You need to reply at most two headings. Then I will further provide you the full information, includes aforementioned sections and at most two sections you called for.\n\n"
+                        f"Title: {paper.title}\n\n"
+                        f"Abstract: {paper.section_texts['Abstract']}\n\n"
+                        f"Potential Sections: {paper.section_names[2:-1]}\n\n"
+                        f"Follow the following format to output your choice of sections:"
+                        f"{{chosen section 1}}, {{chosen section 2}}\n\n"},
+            {"role": "user", "content": text},
+        ]
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=messages,
+        )
+        result = ''
+        for choice in response.choices:
+            result += choice.message.content
+        print(result)
+        return result.split(',')
+
     @tenacity.retry(wait=tenacity.wait_exponential(multiplier=1, min=4, max=10),
                     stop=tenacity.stop_after_attempt(5),
                     reraise=True)
@@ -137,7 +173,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper_path", type=str, default='', help="path of papers")
     parser.add_argument("--file_format", type=str, default='txt', help="output file format")
-    parser.add_argument("--research_fields", type=str, default='computer science and artificial intelligence', help="the research fields of paper")
+    parser.add_argument("--research_fields", type=str, default='computer science, artificial intelligence and reinforcement learning', help="the research fields of paper")
     parser.add_argument("--language", type=str, default='en', help="output lauguage, en or zh")
     
     args = parser.parse_args()

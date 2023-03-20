@@ -20,6 +20,6 @@ Please provide a numbered list of your main concerns regarding this paper (so au
 Please provide a numbered list of specific and clear questions that pertain to the details of the proposed method, evaluation setting, or additional results that would aid in supporting the authors' claims. The questions should be formulated in a manner that, after the authors have answered them during the rebuttal, it would enable a more thorough assessment of the paper's quality. (Maximum length: 2,000 characters)
 xxx
 
-*Overall score (1-5)
-The paper is scored on a scale of 1-5, with 5 being the full mark. Then give the reason for your rating.
+*Overall score (1-10)
+The paper is scored on a scale of 1-10, with 10 being the full mark, and 6 stands for borderline accept. Then give the reason for your rating.
 xxx

@@ -47,7 +47,7 @@ python chat_reviewer.py --paper_path "input_file/demo1.pdf"
 python chat_reviewer.py --paper_path "input_file_path"
 ```
 ## 例子：
-![98652a676f49578be84e4bb51299d90](https://user-images.githubusercontent.com/56249874/226108616-e9e5fe36-350e-4991-9ece-2259a9af3ac3.png)
+![image](https://user-images.githubusercontent.com/56249874/226351967-ef0e6f61-457a-4a77-b78f-84bde47ac38c.png)
 
 ## 使用ChatResponse
 对本地的审稿评论review_comments.txt进行回复： 运行chat_response.py， 比如：

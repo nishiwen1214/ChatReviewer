@@ -124,6 +124,7 @@ class Paper:
         # 遍历每一页并查找子标题
         found_abstract = False
         upper_heading = False
+        font_heading = False
         for page in doc:
             blocks = page.get_text("dict")["blocks"]
             for block in blocks:
@@ -143,7 +144,7 @@ class Paper:
                     for line in lines:
                         for span in line["spans"]:
                             # 如果当前文本是子标题
-                            if span["text"].isupper() and sum(1 for c in span["text"] if c.isupper() and ('A' <= c <='Z')):  # 针对一些标题大小一样,但是全大写的论文
+                            if not font_heading and span["text"].isupper() and sum(1 for c in span["text"] if c.isupper() and ('A' <= c <='Z')) > 4:  # 针对一些标题大小一样,但是全大写的论文
                                 upper_heading = True
                                 heading = span["text"].strip()
                                 if "References" in heading:  # reference 以后的内容不考虑
@@ -158,6 +159,7 @@ class Paper:
                             if not upper_heading and span["size"] > threshold and re.match(  # 正常情况下,通过字体大小判断
                                     r"[A-Z][a-z]+(?:\s[A-Z][a-z]+)*",
                                     span["text"].strip()):
+                                font_heading = True
                                 if heading_font == -1:
                                     heading_font = span["size"]
                                 elif heading_font != span["size"]:

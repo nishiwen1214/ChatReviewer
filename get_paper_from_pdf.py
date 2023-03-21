@@ -32,19 +32,8 @@ class Paper:
         self.all_text = ' '.join(self.text_list)
         self.extract_section_infomation()
         self.section_texts.update({"title": self.title})
-        self.section_texts.update({"paper_info": self.get_paper_info()})
-        self.pdf.close()         
-        
-    def get_paper_info(self):
-        first_page_text = self.pdf[self.title_page].get_text()
-        if "Abstract" in self.section_texts.keys():
-            abstract_text = self.section_texts['Abstract']
-        else:
-            abstract_text = self.abs
-        introduction_text = self.section_texts['Introduction']
-        first_page_text = first_page_text.replace(abstract_text, "").replace(introduction_text, "")
-        return first_page_text
-    
+        self.pdf.close()
+
     # 定义一个函数，根据字体的大小，识别每个章节名称，并返回一个列表
     def get_chapter_names(self,):
         # # 打开一个pdf文件

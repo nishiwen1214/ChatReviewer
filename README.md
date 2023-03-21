@@ -24,7 +24,7 @@
 **⭐️⭐️⭐️ 声明：请对审稿的论文负责，不要直接复制粘贴ChatReviewer生成的任何审稿意见！！！**
 
 ## 主要更新：
-- **Todo: 做一个网页版本的ChatReviewer和ChatResponse**（预计本周出第一版，敬请期待）
+- **Todo: 做一个网页版本的ChatReviewer和ChatResponse**（预计三天内出第一版，敬请期待，晚上加班...）
 - 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。
 - **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...）
 

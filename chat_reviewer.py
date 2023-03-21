@@ -47,7 +47,7 @@ class Reviewer:
             text = ''
             text += 'Title:' + paper.title + '. '
             text += 'Abstract: ' + paper.section_texts['Abstract']
-            intro_title = next((item for item in paper.section_names if 'ntroduction' in item), None)
+            intro_title = next((item for item in paper.section_names if 'ntroduction' in item.lower()), None)
             if intro_title is not None:
                 text += 'Introduction: ' + paper.section_texts[intro_title]
             # Similar for conclusion section

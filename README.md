@@ -50,7 +50,7 @@ python chat_reviewer.py --paper_path "input_file/demo1.pdf"
 ```
 对本地的论文进行批量审稿： 运行chat_reviewer.py， 比如：
 ```python
-python chat_reviewer.py --paper_path "input_file_path"
+python chat_reviewer.py --paper_path "input_file"
 ```
 ## 例子：
 ![image](https://user-images.githubusercontent.com/56249874/226351967-ef0e6f61-457a-4a77-b78f-84bde47ac38c.png)

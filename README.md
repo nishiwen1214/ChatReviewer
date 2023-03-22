@@ -8,25 +8,26 @@
 
 **ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。用途如下：**
 
-1. 对论文进行批量总结和评论，提高科研人员的文献阅读和理解的效率。
+1. 对论文进行批量总结和评审，提高科研人员的文献阅读和理解的效率。
 2. 对自己的论文进行评估，根据ChatReviewer生成的审稿意见进行查漏补缺，进一步提高自己的论文质量。
 3. 辅助论文审稿，给出参考的审稿意见，提高审稿效率和审稿质量。（⭐️禁止复制粘贴！）
 
 **ChatResponse是一款根据审稿人的评论自动生成作者回复的AI助手。用途如下：**
 1. 根据收到的审稿意见，ChatResponse自动提取其中各个审稿人的问题和担忧，并生成点对点的回复。
 
-基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。
+基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。欢迎大家使用、提问和转发！
 
-如果对您有帮助，一个Star和Fork就是对本人的肯定和鼓励了。
+本项目是利用休息时间进行更新，如果对您有帮助，欢迎Star和Fork，也欢迎您进行赞助！
 
-欢迎大家转发，以及任何问题和改进意见！
+![image](https://user-images.githubusercontent.com/56249874/226833312-c96c9d2a-169d-4b36-832d-198e02d7c94f.png)
+
 
 **⭐️⭐️⭐️ 声明：请对审稿的论文负责，不要直接复制粘贴ChatReviewer生成的任何审稿意见！！！**
 
 ## 主要更新：
 - **Todo: 做一个网页版本的ChatReviewer和ChatResponse**（预计三天内出第一版，敬请期待，晚上加班...）
-- 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。
-- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...）
+- 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。3023/3/21
+- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...） 3023/3/19
 
 
 ## 使用步骤：

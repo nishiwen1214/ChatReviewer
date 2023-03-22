@@ -6,6 +6,9 @@
 </div>
 </br>
 
+**💥💥💥ChatReviewer的第一版网页出来了！！！ 直接点击：https://huggingface.co/spaces/ShiwenNi/ChatReviewer**
+![image](https://user-images.githubusercontent.com/56249874/226853577-48813cf2-3f8b-4982-ac85-9f8fdf5ae590.png)
+
 **ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。用途如下：**
 
 1. 对论文进行批量总结和评审，提高科研人员的文献阅读和理解的效率。
@@ -24,9 +27,10 @@
 **⭐️⭐️⭐️ 声明：请对审稿的论文负责，不要直接复制粘贴ChatReviewer生成的任何审稿意见！！！**
 
 ## 主要更新：
-- **Todo: 做一个网页版本的ChatReviewer和ChatResponse**（预计三天内出第一版，敬请期待，晚上加班...）
-- 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。3023/3/21
-- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...） 3023/3/19
+- **Todo: 抽空增加ChatResponse的网页版**
+- **💥💥💥经过本人昨晚上的辛苦加班TAT，ChatReviewer的第一版网页出来了！！！*  2023/3/22
+- 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。2023/3/21
+- **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...） 2023/3/19
 
 
 ## 使用步骤：

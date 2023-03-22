@@ -28,7 +28,7 @@
 
 ## 主要更新：
 - **Todo: 抽空增加ChatResponse的网页版**
-- **💥💥💥经过本人昨晚上的辛苦加班TAT，ChatReviewer的第一版网页出来了！！！*  2023/3/22
+- **💥💥💥为了方便没有太多计算机背景的人的使用，经过本人昨晚上的辛苦加班TAT，ChatReviewer的第一版网页出来了！！！*  2023/3/22
 - 重写了section split的逻辑, fix了可能抓不到固定标题的问题；修改prompt机制：先询问chatgpt 它感兴趣的章节, 随后再发送相应的章节。2023/3/21
 - **更新了ChatResponse，这个是根据审稿人的评论自动生成作者回复的AI助手。**（ChatResponse和ChatReviewer有点左右互博的意思...） 2023/3/19
 

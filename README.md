@@ -20,9 +20,7 @@
 
 基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。欢迎大家使用、提问和转发！
 
-本项目是利用休息时间进行更新，如果对您有帮助，欢迎Star和Fork，也欢迎您进行赞助！
-
-![image](https://user-images.githubusercontent.com/56249874/226833312-c96c9d2a-169d-4b36-832d-198e02d7c94f.png)
+本项目是本人利用休息时间进行更新，如果对您有帮助，欢迎Star和Fork，也欢迎您进行赞助！
 
 **⭐️⭐️⭐️ 声明：请对审稿的论文负责，不要直接复制粘贴ChatReviewer生成的任何审稿意见！！！**
 

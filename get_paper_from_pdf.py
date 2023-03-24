@@ -118,6 +118,7 @@ class Paper:
         threshold = most_common_size * 1
 
         section_dict = {}
+        section_dict["Abstract"] = ""
         last_heading = None
         subheadings = []
         heading_font = -1
@@ -136,7 +137,6 @@ class Paper:
                     if re.search(r"\bAbstract\b", text, re.IGNORECASE):
                         found_abstract = True
                         last_heading = "Abstract"
-                        section_dict["Abstract"] = ""
                 if found_abstract:
                     if 'lines' not in block:
                         continue

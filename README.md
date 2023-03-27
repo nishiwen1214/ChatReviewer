@@ -9,7 +9,7 @@
 💥💥💥**ChatReviewer的第一版网页出来了！！！ 直接点击：https://huggingface.co/spaces/ShiwenNi/ChatReviewer**
 ![image](https://user-images.githubusercontent.com/56249874/226853577-48813cf2-3f8b-4982-ac85-9f8fdf5ae590.png)
 💥💥💥**ChatResponse的第一版网页也出来了！！！ 直接点击：https://huggingface.co/spaces/ShiwenNi/ChatResponse**
-![image](https://user-images.githubusercontent.com/56249874/227832597-2cb540bf-2b17-443f-9258-a59ef2374911.png)
+![image](https://user-images.githubusercontent.com/56249874/227842231-21c5e7b5-fbe6-46d7-b7d3-45b24fec0765.png)
 
 **ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。用途如下：**
 

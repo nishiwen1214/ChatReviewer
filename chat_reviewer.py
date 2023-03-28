@@ -81,7 +81,8 @@ class Reviewer:
         text += 'Title: ' + paper.title + '. '
         text += 'Abstract: ' + paper.section_texts['Abstract']
         text_token = len(self.encoding.encode(text))
-        text = int(len(text)*(self.max_token_num-1000)/text_token)
+        input_text_index = int(len(text)*(self.max_token_num-1000)/text_token)
+        text = text[:input_text_index]
         openai.api_key = self.chat_api_list[self.cur_api]
         self.cur_api += 1
         self.cur_api = 0 if self.cur_api >= len(self.chat_api_list)-1 else self.cur_api

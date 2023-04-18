@@ -32,13 +32,12 @@
 💥💥💥**ChatResponse的第一版网页也出来了！！！ 直接点击：https://huggingface.co/spaces/ShiwenNi/ChatResponse**
 ![image](https://user-images.githubusercontent.com/56249874/227842231-21c5e7b5-fbe6-46d7-b7d3-45b24fec0765.png)
 
-**ChatReviewer是一款基于ChatGPT-3.5的API接口的论文自动审稿AI助手。用途如下：**
-
-1. 对论文进行批量总结和评审，提高科研人员的文献阅读和理解的效率。
-2. 对自己的论文进行评估，根据ChatReviewer生成的审稿意见进行查漏补缺，进一步提高自己的论文质量。
+<strong>ChatReviewer是一款基于ChatGPT-3.5的API开发的智能论文分析与建议助手。</strong>其用途如下：
+⭐️对论文的优缺点进行快速总结和分析，提高科研人员的文献阅读和理解的效率，紧跟研究前沿。
+⭐️对自己的论文进行分析，根据ChatReviewer生成的改进建议进行查漏补缺，进一步提高自己的论文质量。
 
 **ChatResponse是一款根据审稿人的评论自动生成作者回复的AI助手。用途如下：**
-1. 根据收到的审稿意见，ChatResponse自动提取其中各个审稿人的问题和担忧，并生成点对点的回复。
+⭐️根据收到的审稿意见，ChatResponse自动提取其中各个审稿人的问题和担忧，并生成点对点的回复。
 
 基于之前ChatPaper的启发，本人在周末开发了这款ChatReviewer，并且开源给大家。欢迎大家使用、提问和转发！
 
@@ -68,11 +67,11 @@ pip install -r requirements.txt
 ```bash
 pip install -r requirements.txt -i  http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 ```
-5. 对本地的论文进行审稿： 运行chat_reviewer.py， 比如：
+5. 对本地的论文进行分析： 运行chat_reviewer.py， 比如：
 ```python
 python chat_reviewer.py --paper_path "input_file/demo1.pdf"
 ```
-对本地的论文进行批量审稿： 运行chat_reviewer.py， 比如：
+对本地的论文进行批量分析： 运行chat_reviewer.py， 比如：
 ```python
 python chat_reviewer.py --paper_path "input_file"
 ```

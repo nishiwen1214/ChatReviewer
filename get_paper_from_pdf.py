@@ -157,7 +157,7 @@ class Paper:
                                 section_dict[heading] = ""
                                 last_heading = heading
                             if not upper_heading and span["size"] > threshold and re.match(  # 正常情况下,通过字体大小判断
-                                    r"[A-Z][a-z]+(?:\s[A-Z][a-z]+)*",
+                                    r"[0-9]*\.* *[A-Z][a-z]+(?:\s[A-Z][a-z]+)*",
                                     span["text"].strip()):
                                 font_heading = True
                                 if heading_font == -1:

@@ -28,7 +28,7 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 💥💥💥**ChatReviewer的第一版网页出来了！！！ 直接点击：https://huggingface.co/spaces/ShiwenNi/ChatReviewer**
-![image](https://user-images.githubusercontent.com/56249874/232444036-8720e7db-04ae-4376-aec0-069313639a90.png)
+![image](https://user-images.githubusercontent.com/56249874/236369571-1c0bf586-b40d-4b76-bcb0-0f0f6fa09124.png)
 💥💥💥**ChatResponse的第一版网页也出来了！！！ 直接点击：https://huggingface.co/spaces/ShiwenNi/ChatResponse**
 ![image](https://user-images.githubusercontent.com/56249874/227842231-21c5e7b5-fbe6-46d7-b7d3-45b24fec0765.png)
 

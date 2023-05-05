@@ -153,8 +153,11 @@ class Reviewer:
         self.cur_api = 0 if self.cur_api >= len(self.chat_api_list)-1 else self.cur_api
         review_prompt_token = 1000        
         text_token = len(self.encoding.encode(text))
-        input_text_index = int(len(text)*(self.max_token_num-review_prompt_token)/text_token)
-        input_text = "This is the paper for your review:" + text[:input_text_index]
+#         input_text_index = int(len(text)*(self.max_token_num-review_prompt_token)/text_token)
+        if text_token > self.max_token_num/2 - 800:
+            input_text_index = int(len(text)*((self.max_token_num/2)-800)/text_token)
+            text = text[:input_text_index]
+        input_text = "This is the paper for your review:" + text
         with open('ReviewFormat.txt', 'r') as file:   # 读取特定的审稿格式
             review_format = file.read()
         messages=[

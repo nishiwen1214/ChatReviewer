@@ -7,7 +7,7 @@
 <h1 align="center">ChatReviewer & ChatResponse</h1>
 <div align="center">
   <a href="https://github.com/nishiwen1214/ChatReviewer">
-    <img src="https://github.com/nishiwen1214/ChatReviewer//blob/main/images/chatreviewer.png">
+    <img src="https://github.com/nishiwen1214/ChatReviewer/blob/main/images/chatreviewer.png" width="500">
   </a>
  </div>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

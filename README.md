@@ -7,9 +7,9 @@
 <h1 align="center">ChatReviewer & ChatResponse</h1>
 <div align="center">
   <a href="https://github.com/nishiwen1214/ChatReviewer">
-    <img src="https://github.com/nishiwen1214/ChatReviewer/images/chatreviewer.png">
+    <img src="https://github.com/nishiwen1214/ChatReviewer//blob/main/images/chatreviewer.png">
   </a>
-  </div>
+ </div>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **ChatReviewer收到了大多数人的肯定，同时也收到少数质疑和担忧。**

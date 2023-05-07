@@ -1,10 +1,15 @@
-# ChatReviewer & ChatResponse
 
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |
   <a href="./readme_en.md">English</a>
 </div>
 </br>
+<h1 align="center">ChatReviewer & ChatResponse</h1>
+<div align="center">
+  <a href="https://github.com/nishiwen1214/ChatReviewer">
+    <img src="https://github.com/nishiwen1214/ChatReviewer/images/chatreviewer.jpg">
+  </a>
+  </div>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **ChatReviewer收到了大多数人的肯定，同时也收到少数质疑和担忧。**

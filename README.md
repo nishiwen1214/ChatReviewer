@@ -4,10 +4,10 @@
   <a href="./readme_en.md">English</a>
 </div>
 </br>
-<h1 align="center">ChatReviewer & ChatResponse</h1>
+<h1 align="center">ChatReviewer</h1>
 <div align="center">
   <a href="https://github.com/nishiwen1214/ChatReviewer">
-    <img src="https://github.com/nishiwen1214/ChatReviewer/blob/main/images/chatreviewer.png" width="500">
+    <img src="https://github.com/nishiwen1214/ChatReviewer/blob/main/images/chatreviewer.png" width="600">
   </a>
  </div>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

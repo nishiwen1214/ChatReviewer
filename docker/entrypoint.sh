@@ -1,0 +1,1 @@
+python ChatResponse/app.py & python ChatReviewer/app.py

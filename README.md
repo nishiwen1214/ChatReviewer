@@ -60,7 +60,7 @@
 
 ## 使用步骤：
 Windows, Mac和Linux系统都可，python版本最好是3.8或3.9，因为低于3.8就不支持tiktoken这个包。
-1. 在apikey.ini中填入你的openai的api key（sk开头的那串，如果真不会弄申请API可以加我微信号"Shiwen_Ni"(注：本人不卖号，真不会的可以找我))
+1. 在apikey.ini中填入你的openai的api key（sk开头的那串，如果真不会可以加我微信"Shiwen_Ni"(注：本人不卖号，真不会的可以找我))
 2. 使用过程要使用VPN而且保证全局代理（因为ChatGPT把中国ban了）。
 3. 在ReviewFormat.txt中输入你想要的特殊审稿格式（不然就是默认格式）。
 ![image](https://user-images.githubusercontent.com/56249874/226108813-dc44924f-5528-4644-aed2-475d23ccdd84.png)

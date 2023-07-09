@@ -32,6 +32,7 @@
 **其他相关工具--学术GPT  https://huggingface.co/spaces/qingxu98/gpt-academic**
 ![image](https://github.com/nishiwen1214/ChatReviewer/assets/56249874/8d63cb2b-5c0c-4fc1-b56b-a623637c563b)
 💥💥💥**ChatReviewer的第一版网页出来了！网页版不需要翻墙，直接点击：https://huggingface.co/spaces/ShiwenNi/ChatReviewer**
+**⭐️备用地址：https://huggingface.co/spaces/ShiwenNi/ChatReviewer-2⭐️**
 ![image](https://user-images.githubusercontent.com/56249874/236391740-e3c0c142-db5f-436b-b8ab-86502c7b0428.png)
 💥💥💥**ChatResponse的第一版网页也出来了！网页版不需要翻墙，直接点击：https://huggingface.co/spaces/ShiwenNi/ChatResponse**
 ![image](https://user-images.githubusercontent.com/56249874/227842231-21c5e7b5-fbe6-46d7-b7d3-45b24fec0765.png)

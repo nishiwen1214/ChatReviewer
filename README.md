@@ -29,7 +29,7 @@
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**其他相关工具--学术GPT  https://huggingface.co/spaces/qingxu98/gpt-academic**
+**其他相关工具--学术GPT  https://huggingface.co/spaces/ShiwenNi/gpt-academic**
 ![image](https://github.com/nishiwen1214/ChatReviewer/assets/56249874/8d63cb2b-5c0c-4fc1-b56b-a623637c563b)
 💥💥💥**ChatReviewer的第一版网页出来了！网页版不需要翻墙，直接点击：https://huggingface.co/spaces/ShiwenNi/ChatReviewer**
 **⭐️备用地址：https://huggingface.co/spaces/ShiwenNi/ChatReviewer-2⭐️**
